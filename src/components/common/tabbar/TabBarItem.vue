@@ -1,7 +1,7 @@
 <template>
   <div class="tabbar-item" @click="itemClick">
-    <slot v-if="isActive" name="item-icon"></slot>
-    <slot v-else name="item-iconActive"></slot>
+    <div v-if="isActive"><slot name="item-icon"></slot></div>
+    <div v-else><slot name="item-iconActive"></slot></div>
     <div :style="activeStyle"><slot name="item-text"></slot></div>
   </div>
 </template>
@@ -10,10 +10,11 @@ export default {
   name: "TabBarItem",
   props: {
     path: String,
-    activColor:{
+    activeColor:{
       type:String,
-      default:'red'
+      default:'black'
     }
+   
   },
   data() {
     return {
@@ -44,13 +45,13 @@ export default {
   position: relative;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .tabbar-item img {
-  width: 25%;
   display: inline-block;
   vertical-align: middle;
-  position: absolute;
-  top: 0;
 }
-
+.tabbar-item div:nth-child(2){
+  color: #1296db;
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <div id="mainTabBar">
-    <router-view />
+  <div id="MainTabBar">
     <tabbar>
       <tab-bar-item path="/Home">
         <img src="~assets/img/tabbarimg/home.png" alt slot="item-icon" />
@@ -30,7 +29,7 @@
 import tabbar from "components/common/tabbar/TabBar";
 import TabBarItem from "components/common/tabbar/TabBarItem";
 export default {
-  name: "mainTabBar",
+  name: "MainTabBar",
   components: {
     tabbar,
     TabBarItem

@@ -2,39 +2,42 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-import Home from '../views/home/Home'
-import Fenlei from '../views/fenlei/Fenlei'
-import Price from '../views/price/Price'
-import Me from '../views/me/Me'
+const Home = () =>
+    import ('../views/home/Home')
+const Fenlei = () =>
+    import ('../views/fenlei/Fenlei')
+const Price = () =>
+    import ('../views/price/Price')
+const Me = () =>
+    import ('../views/me/Me')
 
 Vue.use(VueRouter)
 
 
-const routers = [{
+const routes = [{
         path: '',
-        redirect: '/home'
+        redirect: '/Home'
     },
     {
         path: '/Home',
         component: Home
-
-    },
-    {
-        path: '/Fenlei',
-        component: Fenlei
     },
     {
         path: '/Price',
         component: Price
     },
     {
+        path: '/Fenlei',
+        component: Fenlei
+    },
+    {
         path: '/Me',
         component: Me
-    },
+    }
 ]
 
 const router = new VueRouter({
-    routers,
+    routes,
     mode: 'history'
 })
 
