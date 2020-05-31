@@ -37,6 +37,9 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+#MainTabBar{
+  margin-top: 75px;
+  display: block;
+}
 </style>
