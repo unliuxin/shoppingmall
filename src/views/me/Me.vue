@@ -1,8 +1,143 @@
 <template>
-    <div><h2>我的</h2></div>
+  <div class="wrapper" ref="wrapper">
+    <ul class="content">
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+      <li>client?http://192</li>
+    </ul>
+  </div>
 </template>
 <script>
+import bScroll from "better-scroll";
 export default {
-    name:"Me"
-}
+  name: "Me",
+  mounted() {
+    let scroll = new bScroll(this.$refs.wrapper, {});
+  }
+};
 </script>
+
+<style scoped>
+.wrapper{
+    height: 150px;
+    overflow: hidden;
+    background:red;
+}
+</style>
