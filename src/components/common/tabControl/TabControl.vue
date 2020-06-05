@@ -1,15 +1,7 @@
 
 <template>
-  <div class="tabcontrol">
-<<<<<<< HEAD
-    <div v-for="(item,index) in titles" :class="{controlActive:index===controlindex}" @click="controlClick(index)">
-=======
-    <div
-      v-for="(item,index) in titles"
-      :class="{tabActive:tabcontrolindex===index}"
-      @click="tabClick(index)"
-    >
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
+  <div class="tab-control">
+    <div v-for="(item,index) in titles" :class="{controlActive:index===controlIndex}" @click="controlClick(index)" class="tab-control-item">
       <span>{{item}}</span>
     </div>
   </div>
@@ -18,7 +10,6 @@
 <script>
 export default {
   name: "TabControl",
-<<<<<<< HEAD
   props: {
     titles: {
       type: Array,
@@ -29,83 +20,42 @@ export default {
   },
   data() {
     return {
-      controlindex: 0
+      controlIndex: 0
     };
   },
   methods: {
     controlClick(index) {
-      this.controlindex = index;
+      this.controlIndex = index;
        this.$emit('tabClick', index)//将子组件的点击事件传到父组件home.vue中
     }
   },
   
-=======
-  data() {
-    return {
-      tabcontrolindex: 0
-    };
-  },
-  methods: {
-    tabClick(index) {
-        this.tabcontrolindex=index
-    }
-  },
-  props: {
-    titles: {
-      type: Array,
-      default() {
-        return [];
-      }
-    }
-  }
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
 };
 </script>
 
 <style scoped>
-.tabcontrol {
-  display: flex;
-  margin-top: 20px;
-}
-.tabcontrol div {
-  flex: 1;
-  text-align: center;
-  
-}
-.tabActive {
-  color: #ff8198;
-}
-.tabActive span{
-border-bottom:2px solid #ff8198;
+  .tab-control {
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+  }
 
+  .tab-control-item {
+    flex: 1;
+  }
 
-<<<<<<< HEAD
-.tabcontrol {
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  position: sticky;
-  top: 0px;
-  padding-top: 14px;
-  padding-bottom: 10px;
-  z-index: 99
-}
-.tabcontrol div {
-  flex: 1;
-  text-align: center;
-}
-.tabcontrol span {
-  flex: 1;
-}
-.controlActive {
-  color: #ff8198;
-}
-.controlActive span {
-  border-bottom: 2px solid;
-  padding-bottom: 2px;
-  transform: translateX(30%);
-  transition: .5;
-=======
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
-}
+  .tab-control-item span {
+    padding: 5px;
+  }
+
+  .controlActive {
+    color: var(--color-high-text);
+  }
+
+  .controlActive span {
+    border-bottom: 3px solid var(--color-tint);
+  }
 </style>

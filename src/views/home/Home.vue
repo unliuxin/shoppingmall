@@ -3,22 +3,15 @@
     <nav-bar class="navbarhome">
       <div slot="navbar_center">购物街</div>
     </nav-bar>
-<<<<<<< HEAD
-    <scroll class="content" ref="scroll" >
+   
+    <scroll class="content" ref="scroll" @pos_scroll="contentScroll" :probeType="2" :pull-up-load="true" @pulling_up="loadMore">
       <home-swiper :banners="banners" />
-
       <recommend-views :recommends="recommends" />
       <popular-views />
-      <tab-control :titles="['流行','新款','精选']" @tabClick="tabClick" />
+       <tab-control :titles="['流行','新款','精选']" @tabClick="tabClick" />
       <goods-list :goods="goods[this.currentType].list" />
     </scroll>
-    <back-to @click.native="backToClick"/><!--监听组件点击事件-->
-=======
-    <home-swiper :banners="banners" />
-    <recommend-views :recommends="recommends" />
-    <popular-views />
-    <tab-control :titles="['流行','新款','精选']" />
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
+    <back-to @click.native="backToClick" v-show="isShowBackTop"/><!--监听组件点击事件-->
   </div>
 </template>
 
@@ -27,16 +20,10 @@ import NavBar from "components/common/navbar/NavBar";
 import HomeSwiper from "./homechild/HomeSwiper";
 import RecommendViews from "./homechild/RecommendViews";
 import PopularViews from "./homechild/PopularViews";
-
-<<<<<<< HEAD
-import scroll from "components/common/scroll/Scroll";
-
 import TabControl from "components/common/tabControl/TabControl";
 import GoodsList from "components/content/Goods/GoodsList";
+import scroll from "components/common/scroll/Scroll";
 import backTo from "components/content/backTo/backTo";
-=======
-import TabControl from "components/common/tabControl/TabControl";
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
 
 import { getHomeMultiData, getHomeGoods } from "network/home";
 export default {
@@ -46,36 +33,25 @@ export default {
     HomeSwiper,
     RecommendViews,
     PopularViews,
-<<<<<<< HEAD
     scroll,
     TabControl,
     GoodsList,
     backTo
-=======
-    TabControl
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
   },
   data() {
     return {
       banners: [],
       recommends: [],
-<<<<<<< HEAD
       currentType: "pop",
+      isShowBackTop:false,
       goods: {
         pop: { page: 0, list: [] },
         new: { page: 0, list: [] },
-=======
-      titles: [],
-      goods: {
-        pops: { page: 0, list: [] },
-        newgoods: { page: 0, list: [] },
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
         sell: { page: 0, list: [] }
       }
     };
   },
   created() {
-<<<<<<< HEAD
     //请求多个数据,如果不加this就会指向上方的方法，加上this才会指向methods里面的方法
     this.getHomeMultiData();
 
@@ -100,19 +76,23 @@ export default {
       }
     },
 
-    //回到顶部效果
-    backToClick() {
-      this.$refs.scroll.scroll.scrollTo(0, 0, 500);
+    //回到顶部的显示和隐藏
+    contentScroll(position){
+      this.isShowBackTop = -position.y > 1000
+      // console.log(position);
     },
 
-=======
-    this.getHomeMultiData();
-    this.getHomeGoods("pops");//拿到流行的数据
-    this.getHomeGoods("newgoods");//拿到新款的数据
-    this.getHomeGoods("sell");//拿到精选的数据
-  },
-  methods: {
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
+    //上拉加载更多
+    loadMore(){
+     console.log('上拉加载');
+     this.getHomeGoods(this.currentType)
+    },
+
+    //回到顶部效果
+    backToClick() {
+      this.$refs.scroll.bscroll.scrollTo(0, 0, 500);
+    },
+
     //请求轮播和轮播下方数据
     getHomeMultiData() {
       getHomeMultiData().then(res => {
@@ -122,21 +102,12 @@ export default {
     },
 
     //请求商品数据
-<<<<<<< HEAD
     getHomeGoods(type) {
       const page = this.goods[type].page + 1;
       getHomeGoods(type, page).then(res => {
         this.goods[type].list.push(...res.data.list);
         this.goods[type].page += 1;
-=======
-    //getHomeGoods（type）里面的type参数动态调用上方pops、newgoods、sell，请求的数据利用push方法添进去
-    getHomeGoods(type) {
-      const page = this.goods[type] + 1;
-      getHomeGoods(type, page).then(res => {
-        this.goods[type].list.push(...res.data.list);
-        this.goods[type].page += 1
-        console.log(res);
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
+        this.$refs.scroll.bscroll.finishPullUp()
       });
     }
   }
@@ -154,4 +125,43 @@ export default {
   height: calc(100vh - 101px);
   overflow: hidden;
 }
+
+#home {
+  /*padding-top: 44px;*/
+  height: 100vh;
+  position: relative;
+}
+
+.home-nav {
+  background-color: var(--color-tint);
+  color: #fff;
+
+  /*在使用浏览器原生滚动时, 为了让导航不跟随一起滚动*/
+  /*position: fixed;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*top: 0;*/
+  /*z-index: 9;*/
+}
+
+.content {
+  overflow: hidden;
+
+  position: absolute;
+  top: 44px;
+  bottom: 49px;
+  left: 0;
+  right: 0;
+}
+
+.tab-control {
+  position: relative;
+  z-index: 9;
+}
+
+/*.content {*/
+/*height: calc(100% - 93px);*/
+/*overflow: hidden;*/
+/*margin-top: 44px;*/
+/*}*/
 </style>>

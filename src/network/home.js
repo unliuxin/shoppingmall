@@ -8,7 +8,6 @@ export function getHomeMultiData() {
     })
 }
 
-<<<<<<< HEAD
 
 
 //请求商品数据
@@ -21,15 +20,4 @@ export function getHomeGoods(type, page) {
             page
         }
     })
-=======
-//请求商品数据
-export function getHomeGoods(type,page){
-return request({
-    url:'/home/data',
-    params:{
-        type,
-        page
-    }
-})
->>>>>>> ec1b72c171235a9e2eee4857d0abfd6cf7485caa
 }

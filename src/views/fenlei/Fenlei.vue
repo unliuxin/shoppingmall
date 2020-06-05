@@ -94,19 +94,26 @@
 
 <script>
 import BScroll from "better-scroll";
+
+
 export default {
   name: "Fenlei",
+  components: {
+    test
+  },
+ 
   mounted() {
     //probeType是侦测滚动的位置   0、1：都不侦测  2：只侦测手指滚动的位置，手指离开就不侦测   3：都实行侦测
-    const bscrool = new BScroll(document.querySelector(".wrapper"), {
-      probeType: 3
+    const bscroll = new BScroll(document.querySelector(".wrapper"), {
+      probeType: 3,
+      pullingUp: true
     });
 
-    bscrool.on("scroll", position => {
-      // console.log(position);
+    bscroll.on("scroll", position => {
+      console.log(position);
     });
 
-    bscrool.on("pullingUp", () => {
+    bscroll.on("pullingUp", () => {
       console.log("下拉加载");
     });
   }

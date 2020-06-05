@@ -39,7 +39,6 @@ export default {
 
 <style scoped>
 #MainTabBar{
-  margin-top: 75px;
   display: block;
 }
 </style>

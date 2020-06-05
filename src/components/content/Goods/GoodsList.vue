@@ -29,6 +29,6 @@ export default {
 .goods_list{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 </style>
