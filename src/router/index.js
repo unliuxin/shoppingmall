@@ -10,6 +10,8 @@ const Price = () =>
     import ('../views/price/Price')
 const Me = () =>
     import ('../views/me/Me')
+const Detail = () =>
+    import ('../views/detail/detail.vue')
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,10 @@ const routes = [{
     {
         path: '/Me',
         component: Me
+    },
+    {
+        path: '/Detail/:iid',
+        component: Detail
     }
 ]
 

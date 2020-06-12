@@ -99,7 +99,7 @@ import BScroll from "better-scroll";
 export default {
   name: "Fenlei",
   components: {
-    test
+
   },
  
   mounted() {
@@ -110,11 +110,11 @@ export default {
     });
 
     bscroll.on("scroll", position => {
-      console.log(position);
+     
     });
 
     bscroll.on("pullingUp", () => {
-      console.log("下拉加载");
+     
     });
   }
 };

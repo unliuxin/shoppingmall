@@ -24,13 +24,20 @@ export default {
     display: flex;
     height: 44px;
     line-height: 44px;
+    box-shadow: 14px 0px 5px #767373;
+    z-index: 9;
+    background: white;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    top:0;
 }
 .navbar_left,.navbar_right{
     width: 15%;
-    background: #ff4466;
+    
 }
 .navbar_center{
     flex: 1;
-    background:#ff4466 ;
+    
 }
 </style>
