@@ -1,5 +1,5 @@
 <template>
-  <div class="goods_info">
+  <div class="goods_info" v-if="Object.keys(imgInfo).length !== 0">
     <div class="info_desc">
       <div class="info_desc_before desc_star"></div>
       <div class="info_desc_text">{{imgInfo.desc}}</div>
@@ -37,14 +37,15 @@ export default {
       //判断图片的个数和counter相等时，发到父组件事件
     imgsLoad() {
         if(++this.counter === this.imagesLength){
-            this.$emit('imagesLoad')
+            this.$emit('imageLoad')
+            
         }
     }
   },
   watch: {
       //监听图片的个数
     imgInfo() {
-      this.imagesLength = this.imgInfo.detailImage[0].list.length;
+      this.imagesLength = this.imgInfo.detailImage[0].list.length;    
     }
   }
 };

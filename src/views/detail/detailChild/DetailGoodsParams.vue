@@ -66,4 +66,7 @@ tr{
 td{
     width: 20%;
 }
+table.setinfo tr:last-child {
+  border-bottom: none ;
+}
 </style>

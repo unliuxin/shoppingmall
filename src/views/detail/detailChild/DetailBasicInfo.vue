@@ -1,5 +1,5 @@
 <template>
-  <div class="detail_basic_info">
+  <div class="detail_basic_info" v-if="Object.keys(goods).length !== 0">
     <div class="info_title">
       <p>{{goods.title}}</p>
     </div>

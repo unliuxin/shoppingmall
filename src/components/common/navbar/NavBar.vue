@@ -22,8 +22,8 @@ export default {
 <style scoped>
 #navbartop{
     display: flex;
-    height: 44px;
-    line-height: 44px;
+    height: 40px;
+    line-height: 40px;
     box-shadow: 14px 0px 5px #767373;
     z-index: 9;
     background: white;

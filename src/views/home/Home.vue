@@ -91,7 +91,10 @@ export default {
     },
     deactivated() {
       this.saveY = this.$refs.scroll.getScrollY();
-    }
+    },
+
+    
+    
   },
   methods: {
     //点击切换方法
@@ -127,6 +130,8 @@ export default {
     //上拉加载更多
     loadMore() {
       this.getHomeGoods(this.currentType);
+      
+      
     },
 
     //回到顶部效果

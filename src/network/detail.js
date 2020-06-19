@@ -9,6 +9,14 @@ export function getDetail(iid) {
     })
 }
 
+//获取推荐商品数据
+export function getRecommend() {
+    return request({
+        url: '/recommend',
+
+    })
+}
+
 //定义一个商品类，一起拿到页面所需要的数据
 export class Goods {
     constructor(columns, itemInfo, services) {
@@ -20,6 +28,7 @@ export class Goods {
         this.columns = columns
         this.services = services
         this.realPrice = itemInfo.lowNowPrice
+        this.realPrice = itemInfo.realPrice
     }
 }
 
